@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>📷 Сравнение текста на фото</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<div id="usage-info" style="text-align:center; margin-top: 1rem;">
+  <small>📊 Использовано: <span id="usage-count">0</span> из 1000 запросов к <a href="https://cloud.google.com/vision/docs" target="_blank">Google Vision API</a> в этом месяце</small>
+</div>
+  <div class="container">
+    <h1>📷 Сравнение текста на двух фото</h1>
+    <p class="subtitle">Перетащите два изображения или выберите их вручную.</p>
+
+    <!-- Drag and Drop Zones -->
+    <div id="drop-zone-1" class="drop-zone">🔻 Перетащите первое изображение сюда</div>
+    <input type="file" id="file-input-1" accept="image/*" style="display:none;" />
+
+    <div id="drop-zone-2" class="drop-zone">🔻 Перетащите второе изображение сюда</div>
+    <input type="file" id="file-input-2" accept="image/*" style="display:none;" />
+
+    <!-- Кнопка "Выбрать файл" -->
+    <div class="manual-select">
+      <label for="file-input-1" class="file-label">📁 Выберите первое фото</label>
+      <label for="file-input-2" class="file-label">📁 Выберите второе фото</label>
+    </div>
+
+    <!-- Кнопка сравнить -->
+    <button id="compare-button" disabled>Сравнить</button>
+
+    <!-- Загрузка и результат -->
+    <div id="loading" class="loading" style="display:none;">🔍 Анализируем изображения...</div>
+    <div id="result" class="result-section" style="display:none;"></div>
+  </div>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>
